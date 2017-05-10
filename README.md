@@ -30,7 +30,7 @@ Code Structure
        Run this script to see some examples of the reference, programmed,
        and GRATER waveforms.
    
-### In the folder Exp_2_BlochSim 
+### In folder Exp_2_BlochSim 
     (functions 2-6 are from http://mrsrl.stanford.edu/~brian/bloch/)
 
    1. **built_in_wfm_func.m** <br />
@@ -54,7 +54,7 @@ Code Structure
            *function Rz=zrot(phi)* <br />
            rotate magetizatoin vector about z by angle phi
 
-### In the folder 'useful_functions':
+### In folder 'useful_functions':
 
   1. **nrmse.m** <br />
           *function nn = nrmse(xtrue, xhat)* <br />
@@ -71,7 +71,7 @@ Code Structure
           *function [ demod_wfm, demod_wfmi ] = wfm_demod(f_c,reference,npts)* <br />
           demodulates, filters, and downsamples the pick-up coil data
 
-###  Folder Exp_1 
+### In folder Exp_1 
     Data for exp 1: Near-ideal conditions (uniform sphere phantom)
     Each row of .mat files contain data for a different waveform, except
     Exp1r_reference.mat which contains a struct, each cell entry with data
@@ -106,7 +106,7 @@ Each row of the .mat files contain data for a different waveform:
    16. 5 bands, TBW = 8
    17. 1 band,  TBW = 4, added pi*t linear phase 
 
-### Folder Exp_2
+### In folder Exp_2
     Data for exp 2: Non-ideal conditions: Large Flip-Angles (uniform sphere)
     Each row of .mat files contain data for a different waveform.
  
@@ -138,7 +138,7 @@ Each row of the .mat files contain data for a different waveform:
    15. 1 band, 85 deg FA
    16. 1 band, 90 deg FA
 
-###  Folder Exp_3
+### In folder Exp_3
     Data for exp 3: Non-ideal conditions: Inhomoengeous volumes (FW phantoms & in-vivo)
     Each row of .mat files contain data for a different waveform, except
     Exp3r_reference.mat which contains a struct, each cell entry with data
