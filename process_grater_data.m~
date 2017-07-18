@@ -3,12 +3,10 @@ clear all; close all;
 addpath('./useful_functions');
 
 %%%% choose an experiment number (1/2/3) & to plot results or not (1/0) %%%
-% expno = 1 -- Exp 1A: Near-ideal conditions (Uniform Sphere phantom)
-%                      fig 3A: averaged GRATER vs. averaged OVS+GRATER 
+% expno = 1 -- Exp 1A: Near-ideal conditions 
+%                     (comparing averaged GRATER and OVS+GRATER)
 % expno = 2 -- Exp 1B: Near-ideal conditions (Uniform Sphere phantom)
-%                      fig 3B: RGA=-G and RGA =-G/2 vs. # averages
 % expno = 3 -- Exp 1C: Near-ideal conditions (Uniform Sphere phantom)
-%                      fig 4:  5-band, TBW=8 pulse with & without OVS
 % expno = 4 -- Exp 2: Non-ideal conditions: Large flip-anges
 % expno = 5 -- Exp 3: Non-ideal conditions: Inhomogeneous volumes
 

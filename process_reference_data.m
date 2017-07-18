@@ -6,7 +6,7 @@ addpath('./useful_functions');
 % Exp 1: Near-ideal conditions:(Uniform Sphere phantom)
 % Exp 2: Non-ideal conditions: Large flip-anges - no pick-up coil data used
 % Exp 3: Non-ideal conditions: Inhomogeneous volumes
-
+ 
 expno = 3;
 plotflag = 0;
 
@@ -14,14 +14,14 @@ plotflag = 0;
 
 switch expno
     case 1    
-        nwfms = 17; % # waveforms
+        nwfms = 16; % # waveforms
         npts = 500; % pts per waveform
         
-        load('./Exp_1/Exp1r_reference'); % load pick-up coil data
-        load('./Exp_1/Exp1r_programmed');% load EPIC data
+        load('./Exp_1/exp1_PUC'); % load pick-up coil data
+        load('./Exp_1/exp1_programmed');% load EPIC data
         
-        tgt = Exp1r_reference;
-        ref = Exp1r_programmed;
+        tgt = exp1_PUC;
+        ref = exp1_programmed;
         
         fc = 127717363; % center frequency of experiment
               
@@ -31,11 +31,11 @@ switch expno
         nwfms = 5; % # waveforms
         npts = 320; % pts per waveform
         
-        load('./Exp_3/Exp3r_reference'); % load pick-up coil data
-        load('./Exp_3/Exp3r_programmed');% load EPIC data
+        load('./Exp_3/exp3_PUC'); % load pick-up coil data
+        load('./Exp_3/exp3_programmed');% load EPIC data
         
-        tgt = Exp3r_reference;
-        ref = Exp3r_programmed;
+        tgt = exp3_PUC;
+        ref = exp3_programmed;
         
         fc = 127717606; % center frequency of experiment
 

@@ -2,11 +2,11 @@
 
 clc; clear all;
 addpath('./Exp_2_BlochSim/');
-load('./Exp_2/Exp2r_programmed');
+load('./Exp_2/exp2_programmed');
 
 %% simulation parameters
 
-b1 = Exp2r_programmed(1,:);     % RF envelope                 (to simulate)
+b1 = exp2_programmed(1,:);     % RF envelope                 (to simulate)
 b1res = length(b1);             % RF resolution               (points)
 dT = .004;                      % RF dwell time               (ms)
 t = dT:dT:(dT*2*b1res);         % RF pulse duration           (ms)
@@ -14,9 +14,15 @@ t = dT:dT:(dT*2*b1res);         % RF pulse duration           (ms)
 T1 = 2000;                      % longitudinal relaxation time(ms)
 T2 = 200;                       % transverse relaxation time  (ms)
 
-zpos = -30:0.2:30;              % selected locations          (cm)
-zmid = round(length(zpos)/2);   % middle location             (cm)
-G = 0.733983;                   % gradient amplitude          (G/cm)
+zpos = -20:0.1:20;              % selected locations          (cm)
+zres = length(zpos);
+zmid = round(zres/2);   % middle location             (cm)
+G_nonlin = hamming(4*b1res);
+Gmidnl = round(length(G_nonlin)/2);
+G_idx1 = Gmidnl - zres/2 +1;
+G_idx2 = Gmidnl + zres/2;
+G = 0.469749; %0.733983;%.*ones(1,length(zpos)); %G_nonlin(G_idx1:G_idx2);                   % gradient amplitude          (G/cm)
+Gmid = round(length(G)/2);
 
 n_FA = 16;                      % # of flip angles to test    (points)
 FAvec = linspace(5,90,n_FA);    % flip angle values           (degrees)
@@ -85,13 +91,13 @@ set(groot,'defaultAxesColorOrder',co)
 figure(100); clf;
 % plot GRATER simulations for each flip angle
 for ii = 1:n_FA
-    scaled(ii,:) = squeeze(s(2,ii,:))/max(squeeze(s(2,ii,(321:end))));
-    p.im(ii) = plot(linspace(0,1.28,320),scaled(ii,321:end),'LineWidth',1.5);
+    scaled(ii,:) = squeeze(s(2,ii,:))/max(squeeze(s(2,ii,(b1res+1:end))));
+    p.im(ii) = plot(linspace(0,1.28,b1res),scaled(ii,b1res+1:end),'LineWidth',1.5);
     hold on; axis tight; axis square;
 end
 
 % plot programmed waveform in red
-p.ref = plot(linspace(0,1.28,320),b1/max(b1),'r--','LineWidth',2);
+p.ref = plot(linspace(0,1.28,b1res),b1/max(b1),'r--','LineWidth',2);
 
 % legends, labels, formatting
 legend([ p.im(1) p.im(n_FA) p.ref], ...

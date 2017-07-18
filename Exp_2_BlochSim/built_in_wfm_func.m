@@ -1,3 +1,4 @@
+
 function [ rf_env ] = built_in_wfm_func( dt, res, sinccyc,ext,numbands,slthk,ampgrad )
 % [ rf_env] = built_in_wfm_func( dt, res, ...
 %               sinccyc,ext,numbands,slthk,ampgrad )
@@ -42,11 +43,11 @@ for itr = 1:res
     B(itr) = re_rf; 
    
     % scale multiband waveform for scanner use
-    re_mb_wfm(mb_itr3,itr) = 0;
-    re_mb_wfm(mb_itr3,itr) = (max_iamp*res/numbands*scale*B(itr)); 
-    re_mb_wfm(mb_itr3,itr) = (2*((re_mb_wfm(mb_itr3,itr)/2))); %/* EVENIZE */
-    if (re_mb_wfm(mb_itr3,itr) == 0)
-        re_mb_wfm(mb_itr3,itr) = 2;
+    re_mb_wfm(itr) = 0;
+    re_mb_wfm(itr) = (max_iamp*res/numbands*scale*B(itr)); 
+    re_mb_wfm(itr) = (2*((re_mb_wfm(itr)/2))); %/* EVENIZE */
+    if (re_mb_wfm(itr) == 0)
+        re_mb_wfm(itr) = 2;
     end
     
 end
