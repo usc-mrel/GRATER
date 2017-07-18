@@ -1,7 +1,7 @@
 MATLAB Scripts for GRATER experiments
 ============================================================
 
-*Vanessa Landes*, *Krishna Nayak*, May 2017.
+*Vanessa Landes*, *Krishna Nayak*, July 2017.
 
 [Magnetic Resonance Engineering Laboratory](https://mrel.usc.edu)
 
@@ -29,6 +29,8 @@ Code Structure
    4. **plot_some_examples.m** <br />
        Run this script to see some examples of the reference, programmed,
        and GRATER waveforms.
+   4. **plot_exp1_figs.m** <br />
+       Run this script to generate figures 3 and 4 from the GRATER manuscript.
    
 ### In folder Exp_2_BlochSim 
     (functions 2-6 are from http://mrsrl.stanford.edu/~brian/bloch/)
@@ -74,20 +76,40 @@ Code Structure
 ### In folder Exp_1 
     Data for exp 1: Near-ideal conditions (uniform sphere phantom)
     Each row of .mat files contain data for a different waveform, except
-    Exp1r_reference.mat which contains a struct, each cell entry with data
+    exp1_PUC.mat which contains a struct, each cell entry with data
     for a different waveform. 
  
  Raw data files: 
-   1. Exp1r_grater.mat
-   2. Exp1r_programmed.mat
-   3. Exp1r_reference.mat <- Raw reference file available on dropbox:
+   1. exp1_programmed.mat
+   2. exp1A_no_OVS.mat
+   3. exp1A_OVS.mat
+   4. exp1B_RGA_G.mat
+   5. exp1B_RGA_half_G.mat
+   6. exp1C_no_OVS.mat
+   7. exp1C_OVS.mat
+   8. exp1_PUC.mat <- Raw PUC file available on dropbox:
  https://www.dropbox.com/sh/hczepl51ff58co4/AACj-fC93daV5tF1vTejIDH5a?dl=0
 
 Processed data files:  
-   1. Exp1p_grater.mat
-   2. Exp1p_reference.mat 
+   1. exp1_PUC_p.mat
+   2. exp1A_no_OVS_p.mat
+   3. exp1A_OVS_p.mat
+   4. exp1B_RGA_G_p.mat
+   5. exp1B_RGA_half_G_p.mat
+   6. exp1C_no_OVS_p.mat
+   7. exp1C_OVS_p.mat
+   
+ NRMSE .mat files:
+   1. exp1A_no_OVS_NRMSE.mat
+   2. exp1A_OVS_NRMSE.mat
+   3. exp1A_PUC_NRMSE.mat
+   4. exp1B_RGA_G_NRMSE.mat
+   5. exp1B_RGA_half_G_NRMSE.mat
 
-Each row of the .mat files contain data for a different waveform: 
+Each row of the exp1 and exp1A.mat files contain data for a different waveform. 
+Exp1 .mat files contain data for one waveform. 
+Exp1A .mat files contain data for 64 averages of GRATER and OVS+GRATER with RGA=-G 
+(see figure 3A of GRATER manuscript):
    1.  2 bands, TBW = 2
    2.  2 bands, TBW = 4
    3.  2 bands, TBW = 6
@@ -104,21 +126,27 @@ Each row of the .mat files contain data for a different waveform:
    14. 5 bands, TBW = 4
    15. 5 bands, TBW = 6
    16. 5 bands, TBW = 8
-   17. 1 band,  TBW = 4, added pi*t linear phase 
+  
+  Each row of the exp1B .mat files contain data for the 5-band, TBW=8 RF pulse with 
+  64 averages of OVS+GRATER with RGA=-G and RGA=-G/2 (see figure 3B of GRATER manuscript).
+  
+  Each row of the exp1C .mat files ocntain data for the 5-band, TBW=8 RF pulse with 64 
+  averages of GRATER and OVS+GRATER for RGA=-G/2 (see figure 4 of GRATER manuscript).
 
 ### In folder Exp_2
     Data for exp 2: Non-ideal conditions: Large Flip-Angles (uniform sphere)
-    Each row of .mat files contain data for a different waveform.
+    Each row of .mat files contain data for a different waveform 
+    (see figrue 5 of GRATER manuscript).
  
  Raw data files: 
-   1. Exp2r_grater.mat
-   2. Exp2r_programmed.mat 
+   1. exp2_grater.mat
+   2. exp2_programmed.mat 
 
  Processed data files: 
-   1. Exp2p_grater.mat
+   1. exp2_grater_p.mat
 
  Simulated data files:
-   1. Exp2s_grater.mat
+   1. exp2_grater_s.mat
 
  Each row contains data for a different waveform: 
    1.  1 band, 5 deg FA
@@ -142,17 +170,17 @@ Each row of the .mat files contain data for a different waveform:
     Data for exp 3: Non-ideal conditions: Inhomoengeous volumes (FW phantoms & in-vivo)
     Each row of .mat files contain data for a different waveform, except
     Exp3r_reference.mat which contains a struct, each cell entry with data
-    for a different waveform. 
+    for a different waveform (see figures 6-8 of GRATER manuscript). 
   
   Raw data files: 
-   1. Exp3r_grater.mat
-   2. Exp3r_programmed.mat
-   3. Exp3r_reference.mat  <- Raw reference file available on dropbox:
+   1. exp3_grater.mat
+   2. exp3_programmed.mat
+   3. exp3_PUC.mat  <- Raw reference file available on dropbox:
          https://www.dropbox.com/sh/hczepl51ff58co4/AACj-fC93daV5tF1vTejIDH5a?dl=0
  
   Processed data files: 
-   1. Exp3p_grater.mat
-   2. Exp3p_reference.mat
+   1. exp3_grater_p.mat
+   2. exp3_PUC_p.mat
  
   Each row of the .mat files contain data for measurements of a 2-band, 
   TBW = 4 rf pulse in a different setting: 
