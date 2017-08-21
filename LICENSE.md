@@ -21,7 +21,7 @@ or electronic device at any given time.
        <br />
     4. **Citation** <br />
        All publications reporting on research that uses the Software and/or the Software’s output must acknowledge this by citing the following: 
-       Landes V, Nayak KS. usc-mrel/GRATER: Release v1.2. Zenodo  2017. doi: https://doi.org/10.5281/zenodo.831849. 
+       Landes V, Nayak KS. usc-mrel/GRATER: Release v1.2. Zenodo  2017. doi: https://doi.org/10.5281/zenodo.846434. 
        <br /> 
     5. **Agreement modifications** <br />
        USC may modify the terms of this Agreement at any time. User will be informed of all changes. If User desires to continue using the Software and/or the Software’s output, User will sign a new agreement. 
