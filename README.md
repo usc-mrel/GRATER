@@ -1,7 +1,7 @@
 MATLAB Scripts for GRATER experiments
 ============================================================
 
-*Vanessa Landes*, *Krishna Nayak*, July 2017.
+*Vanessa Landes*, *Krishna Nayak*, August 2017.
 
 [Magnetic Resonance Engineering Laboratory](https://mrel.usc.edu)
 
